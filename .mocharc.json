@@ -1,0 +1,7 @@
+{
+    "exit": true,
+    "recursive": true,
+    "reporter": "mochawesome",
+    "require": "source-map-support/register"
+  }
+  

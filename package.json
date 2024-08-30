@@ -1,0 +1,79 @@
+{
+  "name": "new",
+  "version": "0.0.1",
+  "description": "new",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": "16 || 18 || 20"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "lint": "npm run eslint && npm run prettier:check",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "pretest": "npm run rebuild",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "posttest": "npm run lint",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
+    "docker:build": "docker build -t new .",
+    "docker:run": "docker run -p 3000:3000 -d new",
+    "premigrate": "npm run build",
+    "migrate": "./node_modules/.bin/db-migrate up",
+    "migrate-down": "./node_modules/.bin/db-migrate down",
+    "preopenapi-spec": "npm run build",
+    "openapi-spec": "node ./dist/openapi-spec",
+    "prestart": "npm run rebuild",
+    "start": "node -r source-map-support/register .",
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "rebuild": "npm run clean && npm run build",
+    "coverage": "nyc npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "abhinavverma-sf <abhinav.verma@sourcefuse.com>",
+  "license": "",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@loopback/boot": "^6.1.2",
+    "@loopback/core": "^5.1.2",
+    "@loopback/repository": "^6.1.5",
+    "@loopback/rest": "^13.1.2",
+    "@loopback/rest-explorer": "^6.1.2",
+    "@loopback/service-proxy": "^6.1.2",
+    "loopback-connector-mysql": "^5.4.4",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^10.1.2",
+    "@loopback/eslint-config": "^14.0.3",
+    "@loopback/testlab": "^6.1.2",
+    "@types/node": "^16.18.40",
+    "@types/uuid": "^10.0.0",
+    "db-migrate": "^0.11.14",
+    "db-migrate-mysql": "^3.0.0",
+    "dotenv-extended": "^2.9.0",
+    "eslint": "^8.47.0",
+    "source-map-support": "^0.5.21",
+    "typescript": "~5.1.6",
+    "mochawesome": "^7.1.3"
+    
+  }
+}
