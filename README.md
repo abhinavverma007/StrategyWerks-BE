@@ -1,3 +1,9 @@
+## Description
+This repository contains backend server built with Loopback(A nodejs framework). It contains APIs
+in `src/controller` to `GET` data. 
+It has other APIs too.
+Migration folder is added to prepopulate 10k rows in DB.
+
 ## Pre-requisites
 1. You must have node in your system.
 2. You must have nvm(node version manager) installed.
@@ -5,8 +11,8 @@ We are using node version 16.16.0.
 After installing nvm, you can type `nvm install 18.20.4` to install this version
 Then type `nvm use 18.20.4`
 3. You must have MySQL as Database.(MySQL server and MySQL workbench).
-4. If facing challenges with MySQL install on windows, follow this ![YT guide](https://www.youtube.com/watch?v=uj4OYk5nKCg)
-For Ubuntu ![YT Guide](https://www.youtube.com/watch?v=9h3ctGFTz9w)
+4. If facing challenges with MySQL install on windows, follow this https://www.youtube.com/watch?v=uj4OYk5nKCg
+For Ubuntu https://www.youtube.com/watch?v=9h3ctGFTz9w
 
 ## Steps to run the application
 
@@ -30,6 +36,7 @@ of your choice which
 
 ## Steps to get code coverage
 1. Run `npm run coverage` in terminal
+![Passing test case with coverage](https://github.com/user-attachments/assets/ae991983-deca-4c9f-a2e3-016778738a53)
 
 ## Demo Video
 [Demo Video](https://github.com/user-attachments/assets/47b3aad8-57af-47fa-be32-5f0a2672573a)
