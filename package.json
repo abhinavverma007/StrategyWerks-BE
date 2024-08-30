@@ -28,8 +28,8 @@
     "docker:build": "docker build -t new .",
     "docker:run": "docker run -p 3000:3000 -d new",
     "premigrate": "npm run build",
-    "migrate": "./node_modules/.bin/db-migrate up",
-    "migrate-down": "./node_modules/.bin/db-migrate down",
+    "migrate": "npx db-migrate up --config './database.json' -m './migrations'",
+    "migrate-down": "npx db-migrate down --config './database.json' -m './migrations'",
     "preopenapi-spec": "npm run build",
     "openapi-spec": "node ./dist/openapi-spec",
     "prestart": "npm run rebuild",
@@ -73,7 +73,8 @@
     "eslint": "^8.47.0",
     "source-map-support": "^0.5.21",
     "typescript": "~5.1.6",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "dotenv": "^16.0.3"
     
   }
 }

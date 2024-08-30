@@ -1,75 +1,30 @@
-# new
+## Pre-requisites
+1. You must have node in your system.
+2. You must have nvm(node version manager) installed.
+We are using node version 16.16.0.
+After installing nvm, you can type `nvm install 18.20.4` to install this version
+Then type `nvm use 18.20.4`
+3. You must have MySQL as Database.(MySQL server and MySQL workbench).
 
-This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
-[initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
+## Steps to run the application
 
-## Install dependencies
+1. Run `npm install` in terminal
+2. Make `.env` file at root level ( parallel to package.json).
+3. Since your database is setup, make a database in MySQL and give it a name 
+of your choice which 
+4. Add 
+`DB_HOST=your_host`
+`DB_DATABASE=your_db`
+`DB_USER=your_user`
+`DB_PASSWORD=your_password` in `.env` file
 
-By default, dependencies were installed when this application was generated.
-Whenever dependencies in `package.json` are changed, run the following command:
+4. Now run `npm run migrate` in terminal to populate your db with data
+5. Now run `npm run start` in terminal
+6. If you face ER_NOT_SUPPORTED_AUTH_MODE error then: follow this: https://stackoverflow.com/a/50131831 and then again `npm run start`
+7. After successful compilation, your server is up at http://localhost:3000
 
-```sh
-npm install
-```
+## Steps to run the test case 
+1. Run `npm run test` in terminal
 
-To only install resolved dependencies in `package-lock.json`:
-
-```sh
-npm ci
-```
-
-## Run the application
-
-```sh
-npm start
-```
-
-You can also run `node .` to skip the build step.
-
-Open http://127.0.0.1:3000 in your browser.
-
-## Rebuild the project
-
-To incrementally build the project:
-
-```sh
-npm run build
-```
-
-To force a full build by cleaning up cached artifacts:
-
-```sh
-npm run rebuild
-```
-
-## Fix code style and formatting issues
-
-```sh
-npm run lint
-```
-
-To automatically fix such issues:
-
-```sh
-npm run lint:fix
-```
-
-## Other useful commands
-
-- `npm run migrate`: Migrate database schemas for models
-- `npm run openapi-spec`: Generate OpenAPI spec into a file
-- `npm run docker:build`: Build a Docker image for this application
-- `npm run docker:run`: Run this application inside a Docker container
-
-## Tests
-
-```sh
-npm test
-```
-
-## What's next
-
-Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
-understand how you can continue to add features to this application.
-
-[![LoopBack](https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
+## Steps to get code coverage
+1. Run `npm run coverage` in terminal
