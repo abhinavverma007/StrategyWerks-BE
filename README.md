@@ -5,6 +5,8 @@ We are using node version 16.16.0.
 After installing nvm, you can type `nvm install 18.20.4` to install this version
 Then type `nvm use 18.20.4`
 3. You must have MySQL as Database.(MySQL server and MySQL workbench).
+4. If facing challenges with MySQL install on windows, follow this ![YT guide](https://www.youtube.com/watch?v=uj4OYk5nKCg)
+For Ubuntu ![YT Guide](https://www.youtube.com/watch?v=9h3ctGFTz9w)
 
 ## Steps to run the application
 
@@ -28,3 +30,6 @@ of your choice which
 
 ## Steps to get code coverage
 1. Run `npm run coverage` in terminal
+
+## Demo Video
+[Demo Video](https://github.com/user-attachments/assets/47b3aad8-57af-47fa-be32-5f0a2672573a)
